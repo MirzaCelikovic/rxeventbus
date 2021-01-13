@@ -8,9 +8,7 @@ This is simple EventBus based on RxJava2.
 Add gradle dependency
 
 ```
-	dependencies {
-	        implementation 'com.github.MirzaCelikovic:rxeventbus:1.0'
-	}
+implementation 'com.github.MirzaCelikovic:rxeventbus:1.0'
 ```
 
 Extend `Event` class when creating events that will be notified to consumers.
