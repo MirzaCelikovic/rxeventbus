@@ -16,7 +16,7 @@ Publish event through RxEventBus
 RxEventBus.notifySubscribers(MyEvent("This is event"))
 ```
 
-Subscribe to receive and consume event in an lifecycle aware component e.g. an Activity
+Subscribe to receive and consume event in an lifecycle aware component e.g. an Activity so disposables are automatically taken care of.
 ```
         RxEventBus.addSubscriber(
             this@MainActivity, // Lifecycle aware component
