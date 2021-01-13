@@ -15,14 +15,15 @@ class MainActivity : AppCompatActivity() {
             this,
             MyEvent::class.java,
             Consumer {
-                Log.e("Event", "received event ${it.value}")
+                Log.e("Event", "Event ${it.value} received")
             }
         )
 
-        Log.e("Event", "tryingto send event")
+        Log.e("Event", "Sending event")
         Handler().postDelayed({
-            RxEventBus.notifySubscribers(MyEvent("This is event"))
-            Log.e("Event", "eventttttjslkdafj;aslkdjf;laksjfd;askdlj;")
+            val event = MyEvent("123")
+            RxEventBus.notifySubscribers(event)
+            Log.e("Event", "Event ${event.value} sent")
         }, 2000)
     }
 }
