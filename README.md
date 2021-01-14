@@ -5,6 +5,12 @@ This is simple EventBus based on RxJava2.
 	
 ## Instructions:
 
+Add gradle dependency
+
+```
+implementation 'com.github.MirzaCelikovic:rxeventbus:1.0'
+```
+
 Extend `Event` class when creating events that will be notified to consumers.
 
 ```
@@ -16,7 +22,7 @@ Publish event through RxEventBus
 RxEventBus.notifySubscribers(MyEvent("This is event"))
 ```
 
-Subscribe to receive and consume event in an lifecycle aware component e.g. an Activity
+Subscribe to receive and consume event in an lifecycle aware component e.g. an Activity so disposables are automatically taken care of.
 ```
         RxEventBus.addSubscriber(
             this@MainActivity, // Lifecycle aware component
